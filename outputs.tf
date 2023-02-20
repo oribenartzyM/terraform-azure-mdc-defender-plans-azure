@@ -1,5 +1,4 @@
-output "echo_text" {
-  value       = var.echo_text
-  description = "The text to echo"
+output "subscription_pricing_id" {
+  description = "The subscription pricing ID"
+  value       = azurerm_security_center_subscription_pricing.asc_plans[*].id
 }
-
