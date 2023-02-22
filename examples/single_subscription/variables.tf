@@ -1,6 +1,6 @@
 variable "mdc_plans_list" {
-  type        = list(string)
-  description = "(Optional) List of all MDC plans"
+  type        = set(string)
+  description = "(Optional) Set of all MDC plans"
   default = [
     "AppServices",
     "Arm",
@@ -20,7 +20,7 @@ variable "mdc_plans_list" {
 
 variable "subplans" {
   type        = map(string)
-  description = "A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
+  description = "(Optional) A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
   default = {
     "StorageAccounts" : "PerTransaction",
     "VirtualMachines" : "P2"

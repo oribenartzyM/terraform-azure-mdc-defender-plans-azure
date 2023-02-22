@@ -1,19 +1,19 @@
 variable "default_subplan" {
   type        = string
-  description = "Resource type pricing default subplan. Contact your MSFT representative for possible values"
+  description = "(Optional) Resource type pricing default subplan. Contact your MSFT representative for possible values"
   default     = null
 }
 
 variable "default_tier" {
   type        = string
-  description = "Default pricing tier to use. Valid values are `Free`, `Standard`"
+  description = "(Optional) Default pricing tier to use. Valid values are `Free`, `Standard`"
   default     = "Standard"
   nullable    = false
 }
 
 variable "mdc_plans_list" {
   type        = set(string)
-  description = "Set of all MDC plans"
+  description = "(Optional) Set of all MDC plans"
   default = [
     "AppServices",
     "Arm",
@@ -34,14 +34,14 @@ variable "mdc_plans_list" {
 
 variable "subplans" {
   type        = map(string)
-  description = "A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
+  description = "(Optional) A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
   default     = {}
   nullable    = false
 }
 
 variable "tiers" {
   type        = map(string)
-  description = "A map of the pricing tiers to use, the key is resource type. This variable takes precedence over `var.default_tier`."
+  description = "(Optional) A map of the pricing tiers to use, the key is resource type. This variable takes precedence over `var.default_tier`."
   default     = {}
   nullable    = false
 }
