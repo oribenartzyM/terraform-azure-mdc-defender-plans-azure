@@ -1,6 +1,6 @@
 module "enable_mdc_plans" {
-  source         = "../modules/mdc-plans"
-  tier           = var.tier
+  source         = "../.."
+  default_tier   = var.tier
   mdc_plans_list = var.mdc_plans_list
-  subplan        = var.subplan
+  subplans       = var.subplans
 }

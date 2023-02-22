@@ -1,7 +1,6 @@
 package e2e
 
 import (
-	"regexp"
 	"testing"
 
 	test_helper "github.com/Azure/terraform-module-test-helper"
@@ -9,12 +8,32 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestExamplesBasic(t *testing.T) {
-	test_helper.RunE2ETest(t, "../../", "examples/basic", terraform.Options{
+func TestExamples_single_subscription(t *testing.T) {
+	plans := []string{
+		"AppServices",
+		"ContainerRegistry",
+		"KeyVaults",
+		"KubernetesService",
+		"SqlServers",
+		"SqlServerVirtualMachines",
+		"StorageAccounts",
+		"VirtualMachines",
+		"Arm",
+		"Dns",
+		"OpenSourceRelationalDatabases",
+		"Containers",
+		"CloudPosture",
+	}
+	test_helper.RunE2ETest(t, "../../", "examples/single_subscription", terraform.Options{
 		Upgrade: true,
+		Vars: map[string]interface{}{
+			"mdc_plans_list": plans,
+		},
 	}, func(t *testing.T, output test_helper.TerraformOutput) {
-		gotEchoText, ok := output["echo_text"].(string)
-		assert.True(t, ok)
-		assert.Regexp(t, regexp.MustCompile("Hello, world!"), gotEchoText)
+		pricingIds := output["subscription_pricing_id"].(map[string]any)
+		for _, p := range plans {
+			assert.Contains(t, pricingIds, p)
+			assert.Regexp(t, "/subscriptions/.+/providers/Microsoft.Security/pricings/.+", pricingIds[p])
+		}
 	})
 }
