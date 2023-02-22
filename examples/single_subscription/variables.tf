@@ -1,27 +1,34 @@
-variable "subscription_id" {
-  type        = string
-  description = "(Required) Azure subscription ID"
+variable "mdc_plans_list" {
+  type        = list(string)
+  description = "(Optional) List of all MDC plans"
+  default = [
+    "AppServices",
+    "Arm",
+    "CloudPosture",
+    "ContainerRegistry",
+    "Containers",
+    "Dns",
+    "KeyVaults",
+    "KubernetesService",
+    "OpenSourceRelationalDatabases",
+    "SqlServers",
+    "SqlServerVirtualMachines",
+    "StorageAccounts",
+    "VirtualMachines",
+  ]
+}
 
-  validation {
-    condition     = length(var.subscription_id) > 0
-    error_message = "[subscription_id] value cannot be an empty string)"
+variable "subplans" {
+  type        = map(string)
+  description = "A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
+  default = {
+    "StorageAccounts" : "PerTransaction",
+    "VirtualMachines" : "P2"
   }
 }
 
 variable "tier" {
   type        = string
-  description = "(Optional) The pricing tier to use. Valid values are (Free, Standard)"
+  description = "(Optional) The pricing tier to use. Valid values are `Free`, `Standard`"
   default     = "Standard"
-}
-
-variable "mdc_plans_list" {
-  type        = list(string)
-  description = "(Optional) List of all MDC plans"
-  default     = ["AppServices", "ContainerRegistry", "KeyVaults", "KubernetesService", "SqlServers", "SqlServerVirtualMachines", "StorageAccounts", "VirtualMachines", "Arm", "Dns", "OpenSourceRelationalDatabases", "Containers", "CloudPosture"]
-}
-
-variable "subplan" {
-  type        = string
-  description = "(Optional)Resource type pricing subplan. Contact your MSFT representative for possible values"
-  default     = ""
 }
