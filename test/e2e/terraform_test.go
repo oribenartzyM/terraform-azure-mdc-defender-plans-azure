@@ -3,18 +3,26 @@ package e2e
 import (
 	"testing"
 
-	"github.com/stretchr/testify/assert"
-
 	test_helper "github.com/Azure/terraform-module-test-helper"
 	"github.com/gruntwork-io/terratest/modules/terraform"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestExamples_single_subscription(t *testing.T) {
 	plans := []string{
-		"AppServices", "ContainerRegistry", "KeyVaults", "KubernetesService",
-		"SqlServers", "SqlServerVirtualMachines", "StorageAccounts",
-		"VirtualMachines", "Arm", "Dns", "OpenSourceRelationalDatabases",
-		"Containers", "CloudPosture",
+		"AppServices",
+		"ContainerRegistry",
+		"KeyVaults",
+		"KubernetesService",
+		"SqlServers",
+		"SqlServerVirtualMachines",
+		"StorageAccounts",
+		"VirtualMachines",
+		"Arm",
+		"Dns",
+		"OpenSourceRelationalDatabases",
+		"Containers",
+		"CloudPosture",
 	}
 	test_helper.RunE2ETest(t, "../../", "examples/single_subscription", terraform.Options{
 		Upgrade: true,
