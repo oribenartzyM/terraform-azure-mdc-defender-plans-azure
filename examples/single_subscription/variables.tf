@@ -21,14 +21,11 @@ variable "mdc_plans_list" {
 variable "subplans" {
   type        = map(string)
   description = "(Optional) A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
-  default = {
-    "StorageAccounts" : "PerTransaction",
-    "VirtualMachines" : "P2"
-  }
+  default = {}
 }
 
-variable "tier" {
+variable "status" {
   type        = string
-  description = "(Optional) The pricing tier to use. Valid values are `Free`, `Standard`"
-  default     = "Standard"
+  description = "(Optional) The pricing tier to use. Valid values are `ON`, `OFF`"
+  default     = "ON"
 }
