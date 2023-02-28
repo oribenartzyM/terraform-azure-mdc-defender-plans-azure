@@ -10,8 +10,8 @@ variable "subplan" {
   default     = ""
 }
 
-variable "tier" {
+variable "status" {
   type        = string
-  description = "(Optional) The pricing tier to use. Valid values are (Free, Standard)"
-  default     = "Standard"
+  description = "(Optional) The pricing tier to use. Valid values are (ON, OFF)"
+  default     = "ON"
 }
