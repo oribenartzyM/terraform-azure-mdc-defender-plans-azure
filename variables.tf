@@ -6,7 +6,7 @@ variable "default_subplan" {
 
 variable "default_status" {
   type        = string
-  description = "(Optional) Default pricing tier to use. Valid values are `ON`, `OFF`"
+  description = "(Optional) Default status to use. Valid values are `ON`, `OFF`"
   default     = "ON"
   nullable    = false
 }
@@ -41,7 +41,7 @@ variable "subplans" {
 
 variable "statuses" {
   type        = map(string)
-  description = "(Optional) A map of the pricing tiers to use, the key is resource type. This variable takes precedence over `var.default_status`."
+  description = "(Optional) A map of the status to use, the key is resource type and the value is status. This variable takes precedence over `var.default_status`."
   default     = {}
   nullable    = false
 }

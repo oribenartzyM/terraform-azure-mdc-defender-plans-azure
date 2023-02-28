@@ -26,6 +26,6 @@ variable "subplans" {
 
 variable "status" {
   type        = string
-  description = "(Optional) The pricing tier to use. Valid values are `ON`, `OFF`"
+  description = "(Optional) The status to use. Valid values are `ON`, `OFF`"
   default     = "ON"
 }
