@@ -39,7 +39,7 @@ variable "subplans" {
   nullable    = false
 }
 
-variable "Statuses" {
+variable "statuses" {
   type        = map(string)
   description = "(Optional) A map of the pricing tiers to use, the key is resource type. This variable takes precedence over `var.default_status`."
   default     = {}
