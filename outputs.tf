@@ -4,6 +4,12 @@ output "subscription_pricing_id" {
 }
   
 output "plans_details" {
-  description = "All plans details"
-  value       = azurerm_security_center_subscription_pricing.asc_plans
+description = "All plans details"
+value = {
+ for name, pricing in azurerm_security_center_subscription_pricing.asc_plans : name => {
+    id   = pricing.id
+    status = pricing.tier == "Standard" ? "true" : "false"
+    subplan = pricing.subplan
+  }
+}
 }

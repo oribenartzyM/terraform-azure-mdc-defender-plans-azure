@@ -11,18 +11,16 @@ import (
 func TestExamples_single_subscription(t *testing.T) {
 	plans := []string{
 		"AppServices",
-		"ContainerRegistry",
+		"Arm",
+		"CloudPosture",
+		"Containers",
+		"Dns",
 		"KeyVaults",
-		"KubernetesService",
+		"OpenSourceRelationalDatabases",
 		"SqlServers",
 		"SqlServerVirtualMachines",
 		"StorageAccounts",
 		"VirtualMachines",
-		"Arm",
-		"Dns",
-		"OpenSourceRelationalDatabases",
-		"Containers",
-		"CloudPosture",
 	}
 	test_helper.RunE2ETest(t, "../../", "examples/single_subscription", terraform.Options{
 		Upgrade: true,

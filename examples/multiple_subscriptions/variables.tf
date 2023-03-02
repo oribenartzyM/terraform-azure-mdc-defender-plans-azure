@@ -1,7 +1,7 @@
 variable "mdc_plans_list" {
   type        = list(string)
   description = "(Optional) List of all MDC plans"
-  default     = ["AppServices", "ContainerRegistry", "KeyVaults", "KubernetesService", "SqlServers", "SqlServerVirtualMachines", "StorageAccounts", "VirtualMachines", "Arm", "Dns", "OpenSourceRelationalDatabases", "Containers", "CloudPosture"]
+  default     = ["AppServices", "KeyVaults", "SqlServers", "SqlServerVirtualMachines", "StorageAccounts", "VirtualMachines", "Arm", "Dns", "OpenSourceRelationalDatabases", "Containers", "CloudPosture"]
 }
 
 variable "subplan" {
@@ -11,7 +11,7 @@ variable "subplan" {
 }
 
 variable "status" {
-  type        = string
-  description = "(Optional) The status to use. Valid values are (ON, OFF)"
-  default     = "ON"
+  type        = bool
+  description = "(Optional) The status to use. Valid values are (true, false)"
+  default     = true
 }

@@ -5,9 +5,9 @@ variable "default_subplan" {
 }
 
 variable "default_status" {
-  type        = string
-  description = "(Optional) Default status to use. Valid values are `ON`, `OFF`"
-  default     = "ON"
+  type        = bool
+  description = "(Optional) Default status to use. Valid values are `true` for enable, `false` for disable."
+  default     = true
   nullable    = false
 }
 
@@ -18,11 +18,9 @@ variable "mdc_plans_list" {
     "AppServices",
     "Arm",
     "CloudPosture",
-    "ContainerRegistry",
     "Containers",
     "Dns",
     "KeyVaults",
-    "KubernetesService",
     "OpenSourceRelationalDatabases",
     "SqlServers",
     "SqlServerVirtualMachines",
@@ -40,7 +38,7 @@ variable "subplans" {
 }
 
 variable "statuses" {
-  type        = map(string)
+  type        = map(bool)
   description = "(Optional) A map of the status to use, the key is resource type and the value is status. This variable takes precedence over `var.default_status`."
   default     = {}
   nullable    = false

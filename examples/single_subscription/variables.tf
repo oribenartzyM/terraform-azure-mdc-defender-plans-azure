@@ -5,11 +5,9 @@ variable "mdc_plans_list" {
     "AppServices",
     "Arm",
     "CloudPosture",
-    "ContainerRegistry",
     "Containers",
     "Dns",
     "KeyVaults",
-    "KubernetesService",
     "OpenSourceRelationalDatabases",
     "SqlServers",
     "SqlServerVirtualMachines",
@@ -21,11 +19,14 @@ variable "mdc_plans_list" {
 variable "subplans" {
   type        = map(string)
   description = "(Optional) A map of resource type pricing subplan, the key is resource type. This variable takes precedence over `var.default_subplan`. Contact your MSFT representative for possible values"
-  default = {}
+  default = {
+    "StorageAccounts" : "PerStorageAccount",
+    "VirtualMachines" : "P2"
+  }
 }
 
 variable "status" {
-  type        = string
-  description = "(Optional) The status to use. Valid values are `ON`, `OFF`"
-  default     = "ON"
+  type        = bool
+  description = "(Optional) The status to use. Valid values are `true` for enable, `false` for disable."
+  default     = true
 }
