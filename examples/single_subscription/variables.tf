@@ -27,5 +27,5 @@ variable "subplans" {
 variable "status" {
   type        = bool
   description = "(Optional) The status to use. Valid values are `true` for enable, `false` for disable."
-  default     = false
+  default     = true
 }
