@@ -7,7 +7,7 @@ provider "azurerm" {
 
 module "enable_mdc_plans_sub${index(list_of_subscriptions, "${subscription}")}" {
     source        = "../../modules/mdc-plans"
-    tier          = "${status}"
+    tier          = ${status}
     subplan       = "${subplan}"
     mdc_plans_list = ${mdc_plans_list}
     providers = { azurerm = azurerm.sub${index(list_of_subscriptions, "${subscription}")} }
