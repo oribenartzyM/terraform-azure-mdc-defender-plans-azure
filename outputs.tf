@@ -8,7 +8,7 @@ description = "All plans details"
 value = {
  for name, pricing in azurerm_security_center_subscription_pricing.asc_plans : name => {
     id   = pricing.id
-    status = pricing.tier == "Standard" ? "true" : "false"
+    status = pricing.tier == "Standard"
     subplan = pricing.subplan
   }
 }

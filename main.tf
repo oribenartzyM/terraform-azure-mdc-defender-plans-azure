@@ -2,9 +2,7 @@ locals {
   final_plans_list = contains(var.mdc_plans_list,"Databases") ? setsubtract(setunion(var.mdc_plans_list, var.mdc_databases_plans), ["Databases"]) : var.mdc_plans_list
   
   # Limiting the subplans to "VirtualMachines" only.
-  # updated_subplans = merge(
-  #   { for k, v in var.subplans : k => (k == "VirtualMachines" ? v : null) }
-  # )
+  # updated_subplans = { for k, v in var.subplans : k => v if k == "VirtualMachines" }
 }
 
 resource "azurerm_security_center_subscription_pricing" "asc_plans" {
