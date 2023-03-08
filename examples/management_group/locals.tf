@@ -1,5 +1,5 @@
 data "azurerm_management_group" "mgroup" {
-    name = "xxxxxxxxxxxxxx" # This is the ID of the management group
+  name = "xxxxxxxxxxxxxx" # This is the ID of the management group
 }
 
 locals {
