@@ -25,10 +25,10 @@ func TestExamples_single_subscription(t *testing.T) {
 		"CloudPosture",
 	}
 	test_helper.RunE2ETest(t, "../../", "examples/single_subscription", terraform.Options{
-		Upgrade: true,
 		Vars: map[string]interface{}{
 			"mdc_plans_list": plans,
 		},
+		Upgrade: true,
 	}, func(t *testing.T, output test_helper.TerraformOutput) {
 		pricingIds := output["subscription_pricing_id"].(map[string]any)
 		for _, p := range plans {
