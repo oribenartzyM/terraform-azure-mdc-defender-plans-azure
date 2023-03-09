@@ -18,7 +18,7 @@ variable "mdc_plans_list" {
 
 variable "status" {
   type        = bool
-  description = "(Optional) The status to use. Valid values are `true` for enable, `false` for disable."
+  description = "(Optional) The status to use. Valid values are (`true`, `false`)"
   default     = true
 }
 

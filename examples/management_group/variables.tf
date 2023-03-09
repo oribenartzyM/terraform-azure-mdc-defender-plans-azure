@@ -1,3 +1,9 @@
+variable "management_group_id" {
+  type        = string
+  description = "(Requierd) the ID of your management group to apply the MDC plan to all subscriptions in the management group"
+  default     = ""
+}
+
 variable "mdc_plans_list" {
   type        = set(string)
   description = "(Optional) Set of all MDC plans"
@@ -18,7 +24,7 @@ variable "mdc_plans_list" {
 
 variable "status" {
   type        = bool
-  description = "(Optional) The status to use. Valid values are `true` for enable, `false` for disable."
+  description = "(Optional) The status to use. Valid values are (`true`, `false`)"
   default     = true
 }
 

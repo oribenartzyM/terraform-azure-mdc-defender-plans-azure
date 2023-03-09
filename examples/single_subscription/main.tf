@@ -1,6 +1,6 @@
-module "enable_mdc_plans" {
+module "mdc_plans_enable" {
   source         = "../.."
-  default_tier   = var.tier
+  default_status = var.status
   mdc_plans_list = var.mdc_plans_list
   subplans       = var.subplans
 }

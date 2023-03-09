@@ -18,7 +18,7 @@ variable "mdc_plans_list" {
 
 variable "status" {
   type        = bool
-  description = "(Optional) The status to use. Valid values are `true` for enable, `false` for disable."
+  description = "(Optional) The status to use. Valid values are (`true`, `false`)"
   default     = true
 }
 
@@ -28,4 +28,16 @@ variable "subplans" {
   default = {
     "VirtualMachines" : "P2"
   }
+}
+
+variable "subscription_id" {
+  type        = string
+  description = "(Required) a subscription id to apply the MDC plan to"
+  default     = ""
+}
+
+variable "subscription_id2" {
+  type        = string
+  description = "(Required) a subscription id to apply the MDC plan to"
+  default     = ""
 }
