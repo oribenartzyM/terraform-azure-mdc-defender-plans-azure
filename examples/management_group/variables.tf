@@ -1,3 +1,9 @@
+variable "management_group_id" {
+  type        = string
+  description = "(Requierd) the ID of your management group to apply the MDC plan to all subscriptions in the management group"
+  default     = ""
+}
+
 variable "mdc_plans_list" {
   type        = set(string)
   description = "(Optional) Set of all MDC plans"

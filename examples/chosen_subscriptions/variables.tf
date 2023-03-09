@@ -29,3 +29,15 @@ variable "subplans" {
     "VirtualMachines" : "P2"
   }
 }
+
+variable "subscription_id" {
+  type        = string
+  description = "(Required) a subscription id to apply the MDC plan to"
+  default     = ""
+}
+
+variable "subscription_id2" {
+  type        = string
+  description = "(Required) a subscription id to apply the MDC plan to"
+  default     = ""
+}

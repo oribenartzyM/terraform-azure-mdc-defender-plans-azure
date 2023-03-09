@@ -1,3 +1,9 @@
+data "azurerm_subscriptions" "available" {}
+
+locals {
+  list_of_subscriptions = data.azurerm_subscriptions.available.subscriptions[*].subscription_id
+}
+
 resource "local_file" "generate_main_terraform_file" {
   filename = "${path.module}/MDC_Plans/main.tf"
   content = templatefile("resolv.conf.tftpl", {

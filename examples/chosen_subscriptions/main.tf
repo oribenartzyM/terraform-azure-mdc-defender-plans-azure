@@ -1,3 +1,7 @@
+locals {
+  list_of_subscriptions = [var.subscription_id, var.subscription_id2]
+}
+
 resource "local_file" "generate_main_terraform_file" {
   filename = "${path.module}/MDC_Plans/main.tf"
   content = templatefile("resolv.conf.tftpl", {

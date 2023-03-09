@@ -1,3 +1,11 @@
+data "azurerm_management_group" "mgroup" {
+  name = var.management_group_id # This is the ID of the management group
+}
+
+locals {
+  list_of_subscriptions = data.azurerm_management_group.mgroup.subscription_ids
+}
+
 resource "local_file" "generate_main_terraform_file" {
   filename = "${path.module}/MDC_Plans/main.tf"
   content = templatefile("resolv.conf.tftpl", {
