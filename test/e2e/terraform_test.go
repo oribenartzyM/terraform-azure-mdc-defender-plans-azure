@@ -19,6 +19,7 @@ func TestExamples_single_subscription(t *testing.T) {
 		"OpenSourceRelationalDatabases",
 		"SqlServers",
 		"SqlServerVirtualMachines",
+		"CosmosDbs",
 		"StorageAccounts",
 		"VirtualMachines",
 	}

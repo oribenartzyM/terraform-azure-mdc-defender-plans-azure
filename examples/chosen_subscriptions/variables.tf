@@ -11,6 +11,7 @@ variable "mdc_plans_list" {
     "OpenSourceRelationalDatabases",
     "SqlServers",
     "SqlServerVirtualMachines",
+    "CosmosDbs",
     "StorageAccounts",
     "VirtualMachines",
   ]

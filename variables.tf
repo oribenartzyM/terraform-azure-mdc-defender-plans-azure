@@ -18,6 +18,7 @@ variable "mdc_databases_plans" {
     "OpenSourceRelationalDatabases",
     "SqlServers",
     "SqlServerVirtualMachines",
+    "CosmosDbs",
   ]
   nullable = false
 }
@@ -35,6 +36,7 @@ variable "mdc_plans_list" {
     "OpenSourceRelationalDatabases",
     "SqlServers",
     "SqlServerVirtualMachines",
+    "CosmosDbs",
     "StorageAccounts",
     "VirtualMachines",
   ]
