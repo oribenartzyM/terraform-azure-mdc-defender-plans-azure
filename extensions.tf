@@ -1,4 +1,3 @@
-
 data "azurerm_subscription" "current" {}
 
 locals {
@@ -173,5 +172,3 @@ resource "azurerm_subscription_policy_assignment" "containers_arc_autoprovisioni
     azurerm_security_center_subscription_pricing.asc_plans["Containers"]
   ]
 }
-
-
