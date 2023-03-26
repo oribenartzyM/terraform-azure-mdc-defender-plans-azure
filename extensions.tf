@@ -17,12 +17,11 @@ resource "azurerm_subscription_policy_assignment" "va_auto_provisioning" {
   subscription_id      = data.azurerm_subscription.current.id
   display_name         = "Configure machines to receive a vulnerability assessment provider"
   location             = "West Europe"
-  parameters           = local.va_type
+  parameters           = local.va_type  # For MDE vulnerability assessmen vaType should be "mdeTvm", for using Qualys vaType should be "default".
 
   identity {
     type = "SystemAssigned"
   }
-  # For MDE vulnerability assessmen vaType should be "mdeTvm", for using Qualys vaType should be "default".
   depends_on = [
     azurerm_security_center_subscription_pricing.asc_plans["VirtualMachines"]
   ]
