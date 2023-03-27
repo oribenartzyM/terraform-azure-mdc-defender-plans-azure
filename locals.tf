@@ -17,7 +17,16 @@ locals {
       definition_display_name = "[Preview]: Configure Azure Arc enabled Kubernetes clusters to install Microsoft Defender for Cloud extension"
     }
   }
-  log_analytics_policies = {
+  va_type = jsonencode({
+    "vaType" = {
+      "value" = "mdeTvm"
+    }
+  })
+  virtual_machine_policies = {
+    mdc-va-autoprovisioning = {
+      display_name            = "Configure machines to receive a vulnerability assessment provider"
+      definition_display_name = "Configure machines to receive a vulnerability assessment provider"
+    }
     mdc-log-analytics-arc1-autoprovisioning = {
       display_name            = "Configure machines to receive a Log Analytics 1 provider"
       definition_display_name = "[Preview]: Configure Azure Arc-enabled Windows machines with Log Analytics agents connected to default Log Analytics workspace"
@@ -27,10 +36,4 @@ locals {
       definition_display_name = "[Preview]: Configure Azure Arc-enabled Linux machines with Log Analytics agents connected to default Log Analytics workspace"
     }
   }
-  va_type = jsonencode({
-    "vaType" = {
-      "value" = "mdeTvm"
-    }
-  })
-
 }
