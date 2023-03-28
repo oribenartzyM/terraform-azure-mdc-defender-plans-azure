@@ -51,7 +51,6 @@ resource "azurerm_role_assignment" "va_auto_provisioning_identity_role" {
   role_definition_id = data.azurerm_role_definition.security_admin.id
 
   depends_on = [
-    azurerm_subscription_policy_assignment.vm["mdc-va-autoprovisioning"],
     azurerm_security_center_subscription_pricing.asc_plans["VirtualMachines"]
   ]
 }
