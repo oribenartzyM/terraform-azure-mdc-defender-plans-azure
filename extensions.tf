@@ -25,7 +25,7 @@ resource "azurerm_subscription_policy_assignment" "vm" {
   name                 = each.key
   policy_definition_id = data.azurerm_policy_definition.vm_policies[each.key].id
   subscription_id      = data.azurerm_subscription.current.id
-  display_name         = each.value.display_name
+  display_name         = each.value.definition_display_name
   location             = var.location
   parameters           = each.key == "mdc-va-autoprovisioning" ? local.va_type : null
 
@@ -79,7 +79,7 @@ resource "azurerm_subscription_policy_assignment" "container" {
   name                 = each.key
   policy_definition_id = data.azurerm_policy_definition.container_policies[each.key].id
   subscription_id      = data.azurerm_subscription.current.id
-  display_name         = each.value.display_name
+  display_name         = each.value.definition_display_name
   location             = var.location
 
   identity {
