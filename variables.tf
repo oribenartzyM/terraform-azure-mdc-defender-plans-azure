@@ -11,6 +11,12 @@ variable "default_subplan" {
   default     = null
 }
 
+variable "location" {
+  type        = string
+  description = "(Optional) The location/region where the policy should exist."
+  default     = "West Europe"
+}
+
 variable "mdc_databases_plans" {
   type        = set(string)
   description = "(Optional) Set of all MDC databases plans"
