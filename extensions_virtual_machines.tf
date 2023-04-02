@@ -17,15 +17,15 @@ locals {
   }
   virtual_machine_roles = {
     role-1 = {
-      name = "Security Admin"
+      name   = "Security Admin"
       policy = "mdc-va-autoprovisioning"
     }
     role-2 = {
-      name = "Contributor"
+      name   = "Contributor"
       policy = "mdc-log-analytics-arc1-autoprovisioning"
     }
     role-3 = {
-      name = "Contributor"
+      name   = "Contributor"
       policy = "mdc-log-analytics-arc2-autoprovisioning"
     }
   }
@@ -85,7 +85,7 @@ resource "azurerm_security_center_setting" "setting_mcas" {
 # Enabling vm Roles
 data "azurerm_role_definition" "vm_roles" {
   for_each = contains(var.mdc_plans_list, "VirtualMachines") ? local.virtual_machine_roles : {}
-  
+
   name = each.value.name
 }
 

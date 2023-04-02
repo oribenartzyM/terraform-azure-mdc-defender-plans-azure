@@ -10,11 +10,11 @@ locals {
   }
   log_analytics_roles = {
     role-1 = {
-      name = "Contributor"
+      name   = "Contributor"
       policy = "mdc-log-analytics-arc1-autoprovisioning"
     }
     role-2 = {
-      name = "Contributor"
+      name   = "Contributor"
       policy = "mdc-log-analytics-arc2-autoprovisioning"
     }
   }
@@ -61,7 +61,7 @@ resource "azurerm_security_center_auto_provisioning" "la_auto_provisioning" {
 # Enabling Roles
 data "azurerm_role_definition" "la_roles" {
   for_each = (contains(var.mdc_plans_list, "SqlServerVirtualMachines") || contains(var.mdc_plans_list, "Databases")) && !contains(var.mdc_plans_list, "VirtualMachines") ? local.log_analytics_roles : {}
-  
+
   name = each.value.name
 }
 
