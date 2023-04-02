@@ -1,4 +1,3 @@
-
 locals {
   log_analytics_policies = {
     mdc-log-analytics-arc1-autoprovisioning = {
@@ -20,9 +19,7 @@ locals {
   }
 }
 
-data "azurerm_subscription" "curr" {}
-
-# Enabling extension - Log Analytics
+# Enabling extension - Log Analytics for arc
 data "azurerm_policy_definition" "la_policies" {
   for_each = (contains(var.mdc_plans_list, "SqlServerVirtualMachines") || contains(var.mdc_plans_list, "Databases")) && !contains(var.mdc_plans_list, "VirtualMachines") ? local.log_analytics_policies : {}
 
@@ -34,7 +31,7 @@ resource "azurerm_subscription_policy_assignment" "sql" {
 
   name                 = each.key
   policy_definition_id = data.azurerm_policy_definition.la_policies[each.key].id
-  subscription_id      = data.azurerm_subscription.curr.id
+  subscription_id      = data.azurerm_subscription.current.id
   display_name         = each.value.definition_display_name
   location             = var.location
 
@@ -47,7 +44,7 @@ resource "azurerm_subscription_policy_assignment" "sql" {
   ]
 }
 
-# Enabling extension - Log Analytics
+# Enabling extension - Log Analytics for vm
 resource "azurerm_security_center_auto_provisioning" "la_auto_provisioning" {
   count = (contains(var.mdc_plans_list, "SqlServerVirtualMachines") || contains(var.mdc_plans_list, "Databases")) && !contains(var.mdc_plans_list, "VirtualMachines") ? 1 : 0
 
@@ -58,7 +55,7 @@ resource "azurerm_security_center_auto_provisioning" "la_auto_provisioning" {
   ]
 }
 
-# Enabling Roles
+# Enabling Log Analytics Roles
 data "azurerm_role_definition" "la_roles" {
   for_each = (contains(var.mdc_plans_list, "SqlServerVirtualMachines") || contains(var.mdc_plans_list, "Databases")) && !contains(var.mdc_plans_list, "VirtualMachines") ? local.log_analytics_roles : {}
 
@@ -69,7 +66,7 @@ resource "azurerm_role_assignment" "va_auto_provisioning_la_role" {
   for_each = (contains(var.mdc_plans_list, "SqlServerVirtualMachines") || contains(var.mdc_plans_list, "Databases")) && !contains(var.mdc_plans_list, "VirtualMachines") ? local.log_analytics_roles : {}
 
   principal_id       = azurerm_subscription_policy_assignment.sql[each.value.policy].identity[0].principal_id
-  scope              = data.azurerm_subscription.curr.id
+  scope              = data.azurerm_subscription.current.id
   role_definition_id = data.azurerm_role_definition.la_roles[each.key].id
 
   depends_on = [

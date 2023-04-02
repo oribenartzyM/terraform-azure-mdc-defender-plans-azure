@@ -40,8 +40,6 @@ No modules.
 | [azurerm_role_definition.container_roles](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/role_definition)                                       | data source |
 | [azurerm_role_definition.la_roles](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/role_definition)                                              | data source |
 | [azurerm_role_definition.vm_roles](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/role_definition)                                              | data source |
-| [azurerm_subscription.cur](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription)                                                         | data source |
-| [azurerm_subscription.curr](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription)                                                        | data source |
 | [azurerm_subscription.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subscription)                                                     | data source |
 
 ## Inputs

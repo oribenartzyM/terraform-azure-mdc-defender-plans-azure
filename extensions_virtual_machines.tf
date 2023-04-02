@@ -31,8 +31,6 @@ locals {
   }
 }
 
-data "azurerm_subscription" "current" {}
-
 # Enabling vm extensions - Log Analytics for arc and vulnerability assessment
 data "azurerm_policy_definition" "vm_policies" {
   for_each = contains(var.mdc_plans_list, "VirtualMachines") ? local.virtual_machine_policies : {}
