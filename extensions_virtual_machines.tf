@@ -93,8 +93,4 @@ resource "azurerm_role_assignment" "va_auto_provisioning_vm_role" {
   principal_id       = azurerm_subscription_policy_assignment.vm[each.value.policy].identity[0].principal_id
   scope              = data.azurerm_subscription.current.id
   role_definition_id = data.azurerm_role_definition.vm_roles[each.key].id
-
-  depends_on = [
-    azurerm_security_center_subscription_pricing.asc_plans["VirtualMachines"]
-  ]
 }
