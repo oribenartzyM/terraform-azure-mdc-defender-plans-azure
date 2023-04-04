@@ -10,9 +10,13 @@ on:
       - '**.md'
       - '**/go.mod'
 
+permissions:
+  contents: write
+  pull-requests: read
+
 jobs:
   acc-tests:
-    runs-on: [self-hosted, 1ES.Pool=terraform-azurerm-mdc]
+    runs-on: [self-hosted, 1ES.Pool=terraform-azure-mdc-defender-plans-azure]
     environment:
       name: acctests
     steps:
@@ -31,5 +35,7 @@ jobs:
           path: |
             examples/**/TestRecord.md.tmp
       - name: version-upgrade test
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           sh scripts/ci-version-upgrade.sh
