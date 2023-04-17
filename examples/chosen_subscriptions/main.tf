@@ -1,6 +1,5 @@
 locals {
-  # list_of_subscriptions = [var.subscription_id, var.subscription_id2]
-  list_of_subscriptions = ["d533b51a-489e-4113-a2d1-2fa3b6ecc02e"]
+  list_of_subscriptions = [var.subscription_id, var.subscription_id2]
 }
 
 resource "local_file" "generate_main_terraform_file" {
