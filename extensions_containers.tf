@@ -14,31 +14,31 @@ locals {
     }
   }
   container_roles = {
-    kubernetes1-1 = {
+    containers-kubernetes1-role-1 = {
       name   = "Kubernetes Extension Contributor"
       policy = "mdc-containers-kubernetes1-autoprovisioning"
     }
-    kubernetes2-1 = {
+    containers-kubernetes2-role-1 = {
       name   = "Azure Kubernetes Service Contributor Role"
       policy = "mdc-containers-kubernetes2-autoprovisioning"
     }
-    kubernetes2-2 = {
+    containers-kubernetes2-role-2 = {
       name   = "Azure Kubernetes Service Policy Add-on Deployment"
       policy = "mdc-containers-kubernetes2-autoprovisioning"
     }
-    aks-1 = {
+    containers-aks-role-1 = {
       name   = "Log Analytics Contributor"
       policy = "mdc-containers_aks_autoprovisioning"
     }
-    aks-2 = {
+    containers-aks-role-2 = {
       name   = "Contributor"
       policy = "mdc-containers_aks_autoprovisioning"
     }
-    arc-1 = {
+    containers-arc-role-1 = {
       name   = "Log Analytics Contributor"
       policy = "mdc-containers-arc-autoprovisioning"
     }
-    arc-2 = {
+    containers-arc-role-2 = {
       name   = "Contributor"
       policy = "mdc-containers-arc-autoprovisioning"
     }
