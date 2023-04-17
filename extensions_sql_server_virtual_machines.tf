@@ -8,11 +8,11 @@ locals {
     }
   }
   log_analytics_roles = {
-    role-1 = {
+    sql-server-virtual-machines-arc1-role-1 = {
       name   = "Contributor"
       policy = "mdc-log-analytics-arc1-autoprovisioning"
     }
-    role-2 = {
+    sql-server-virtual-machines-arc2-role-1 = {
       name   = "Contributor"
       policy = "mdc-log-analytics-arc2-autoprovisioning"
     }

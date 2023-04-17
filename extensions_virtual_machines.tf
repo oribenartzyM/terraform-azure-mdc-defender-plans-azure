@@ -16,15 +16,15 @@ locals {
     }
   }
   virtual_machine_roles = {
-    role-1 = {
+    virtual-machines-va-role-1 = {
       name   = "Security Admin"
       policy = "mdc-va-autoprovisioning"
     }
-    role-2 = {
+    virtual-machines-arc1-role-1 = {
       name   = "Contributor"
       policy = "mdc-log-analytics-arc1-autoprovisioning"
     }
-    role-3 = {
+    virtual-machines-arc2-role-1 = {
       name   = "Contributor"
       policy = "mdc-log-analytics-arc2-autoprovisioning"
     }
