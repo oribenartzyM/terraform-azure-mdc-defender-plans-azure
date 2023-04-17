@@ -1,14 +1,18 @@
 # Changelog
 
-## [Unreleased](https://github.com/Azure/terraform-verified-module/tree/HEAD)
+## [Unreleased](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/tree/HEAD)
 
 **Merged pull requests:**
 
-- chore\(deps\): bump github.com/Azure/terraform-module-test-helper from 0.7.1 to 0.8.1 in /test [\#8](https://github.com/Azure/terraform-verified-module/pull/8) ([dependabot[bot]](https://github.com/apps/dependabot))
-- Adding Microsoft SECURITY.MD [\#5](https://github.com/Azure/terraform-verified-module/pull/5) ([microsoft-github-policy-service[bot]](https://github.com/apps/microsoft-github-policy-service))
-- chore\(deps\): bump github.com/Azure/terraform-module-test-helper from 0.6.0 to 0.7.1 in /test [\#4](https://github.com/Azure/terraform-verified-module/pull/4) ([dependabot[bot]](https://github.com/apps/dependabot))
-- chore\(deps\): bump github.com/gruntwork-io/terratest from 0.41.6 to 0.41.7 in /test [\#2](https://github.com/Azure/terraform-verified-module/pull/2) ([dependabot[bot]](https://github.com/apps/dependabot))
-- feat\(module\): Add base template of tfmod [\#1](https://github.com/Azure/terraform-verified-module/pull/1) ([yufeiminds](https://github.com/yufeiminds))
+- Bump github.com/gruntwork-io/terratest from 0.41.15 to 0.41.17 in /test [\#19](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Update ci files, change sqlserver virtual machines toggle expression [\#18](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/18) ([lonegunmanb](https://github.com/lonegunmanb))
+- Oribenazrtzy/add roles extensions to module [\#17](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/17) ([oribenartzyM](https://github.com/oribenartzyM))
+- Use definition display name for policies [\#16](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/16) ([oribenartzyM](https://github.com/oribenartzyM))
+- Add extensions to module [\#13](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/13) ([oribenartzyM](https://github.com/oribenartzyM))
+- Bump github.com/gruntwork-io/terratest from 0.41.12 to 0.41.15 in /test [\#11](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/11) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Add CosmosDbs to MDC default databases and plans [\#10](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/10) ([yuvmel](https://github.com/yuvmel))
+- Oribenartzy/changing the input from tier to status [\#5](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/5) ([oribenartzyM](https://github.com/oribenartzyM))
+- Add test to this module [\#3](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/3) ([lonegunmanb](https://github.com/lonegunmanb))
 
 
 
