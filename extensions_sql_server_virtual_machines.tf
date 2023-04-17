@@ -8,11 +8,11 @@ locals {
     }
   }
   log_analytics_roles = {
-    role-1 = {
+    arc1-1 = {
       name   = "Contributor"
       policy = "mdc-log-analytics-arc1-autoprovisioning"
     }
-    role-2 = {
+    arc2-1 = {
       name   = "Contributor"
       policy = "mdc-log-analytics-arc2-autoprovisioning"
     }
