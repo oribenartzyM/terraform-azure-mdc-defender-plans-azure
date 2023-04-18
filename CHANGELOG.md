@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Bump github.com/gruntwork-io/terratest from 0.41.17 to 0.41.18 in /test [\#22](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/22) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Change container roles and output names [\#21](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/21) ([oribenartzyM](https://github.com/oribenartzyM))
 - Bump github.com/Azure/terraform-module-test-helper from 0.10.0 to 0.13.0 in /test [\#20](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/20) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump github.com/gruntwork-io/terratest from 0.41.15 to 0.41.17 in /test [\#19](https://github.com/oribenartzyM/terraform-azure-mdc-defender-plans-azure/pull/19) ([dependabot[bot]](https://github.com/apps/dependabot))
